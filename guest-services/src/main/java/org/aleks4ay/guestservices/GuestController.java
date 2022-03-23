@@ -1,6 +1,7 @@
 package org.aleks4ay.guestservices;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/guests")
 public class GuestController {
     private final GuestRepository repository;
+
+    @Value("${myname}")
+    private String myName;
 
     @Autowired
     public GuestController(GuestRepository repository) {
@@ -25,4 +29,11 @@ public class GuestController {
     public Guest getGuest(@PathVariable("id") long id) {
         return repository.findById(id).get();
     }
+
+    @GetMapping("/name")
+    public String getMyName() {
+        return myName;
+    }
+
+
 }
