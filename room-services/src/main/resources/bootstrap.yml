@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: room-services
+  jpa:
+    hibernate:
+      ddl-auto: none
+  cloud:
+    config:
+      uri: http://localhost:9011

@@ -1,16 +1,10 @@
-package org.aleks4ay.roomservices;
+package org.aleks4ay.roomreservationservice;
 
-import javax.persistence.*;
 import java.math.BigDecimal;
 
-@Entity
-@Table(name = "ROOM")
 public class Room {
-    @Id
-    @Column(name="ROOM_ID")
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
 
+    private long id;
     private long roomNumber;
     private BigDecimal price;
 

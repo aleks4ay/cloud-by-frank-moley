@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: eureka-server
+  cloud:
+    config:
+      uri: http://localhost:9011
+  jpa:
+    hibernate:
+      ddl-auto: none
